@@ -20,7 +20,7 @@ if [ -z ${PLUGIN_AWS_REGION} ]; then
 fi
 
 if [ -z ${PLUGIN_TIMEOUT} ]; then
-  PLUGIN_TIMEOUT="300"
+  PLUGIN_TIMEOUT="600"
 fi
 
 if [ -z ${PLUGIN_MAX} ]; then
@@ -38,6 +38,9 @@ fi
 if [ ! -z ${PLUGIN_AWS_SECRET_ACCESS_KEY} ]; then
   export AWS_SECRET_ACCESS_KEY=$PLUGIN_AWS_SECRET_ACCESS_KEY
 fi
+
+export $AWS_ACCESS_KEY_ID
+export $AWS_SECRET_ACCESS_KEY
 
 ecs-deploy --region ${PLUGIN_AWS_REGION} --cluster ${PLUGIN_CLUSTER} --image ${PLUGIN_IMAGE_NAME} \
 --service-name ${PLUGIN_SERVICE} --timeout ${PLUGIN_TIMEOUT} --min ${PLUGIN_MIN} --max ${PLUGIN_MAX}

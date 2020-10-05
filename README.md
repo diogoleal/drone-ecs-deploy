@@ -1,4 +1,4 @@
-#ECS deploy plugin for drone.io
+# ECS deploy plugin for drone.io
 
 This plugin allows updating an ECS service.
 

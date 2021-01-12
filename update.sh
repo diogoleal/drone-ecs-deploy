@@ -43,4 +43,4 @@ export $AWS_ACCESS_KEY_ID
 export $AWS_SECRET_ACCESS_KEY
 
 ecs-deploy --region ${PLUGIN_AWS_REGION} --cluster ${PLUGIN_CLUSTER} --image ${PLUGIN_IMAGE_NAME} \
---service-name ${PLUGIN_SERVICE} --timeout ${PLUGIN_TIMEOUT} --min ${PLUGIN_MIN} --max ${PLUGIN_MAX}
+--service-name ${PLUGIN_SERVICE} --timeout ${PLUGIN_TIMEOUT} --min ${PLUGIN_MIN} --max ${PLUGIN_MAX} --force-new-deployment ${PLUGIN_FORCE_NEW_DEPLOYMENT}
